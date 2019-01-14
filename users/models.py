@@ -7,8 +7,6 @@ class CustomUserManager(UserManager):
 class CustomUser(AbstractUser):
     # add additional fields in here
 
-    bio = models.TextField(max_length=400, blank=True)
-
     objects = CustomUserManager()
 
     def __str__(self):
