@@ -1,13 +1,12 @@
 {% extends 'blog/base.html' %}
 
-{% block title %}Sign Up{% endblock %}
+{% block title %}Zarejstruj się{% endblock %}
 
 {% block content %}
-  <h2>Sign up</h2>
-  <p><a href="{% url 'signup' %}">logout</a></p>
+  <h2>Zarejstruj się</h2>
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Sign up</button>
+    <button type="submit">Zarejstruj się</button>
   </form>
 {% endblock %}
