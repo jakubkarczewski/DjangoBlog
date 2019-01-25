@@ -13,6 +13,7 @@
             {% endif %}
 		{% endif %}
         <h1>{{ post.title }}</h1>
+         <strong>Autor: {{ post.author }}</strong>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
     <hr>
@@ -22,7 +23,7 @@
         <div class="comment">
             <div class="date">
                 {{ comment.created_date }}
-                {% if not comment.approved_comment %}
+                {% if not comment.approved_comment and user == post.author %}
                     <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
                     <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
                 {% endif %}
